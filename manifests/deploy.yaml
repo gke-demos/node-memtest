@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-memtest
+  namespace: default
+  labels:
+    app: node-memtest
+spec:
+  containers:
+  - name: node-memtest
+    image: us-docker.pkg.dev/gke-demos-345619/gke-demos/node-memtest
+    imagePullPolicy: Always
+    ports:
+    - containerPort: 8080
+    resources:
+      requests:
+        cpu: 1.0
+        memory: 1G
+      limits:
+        cpu: 1.0
+        memory: 1G
